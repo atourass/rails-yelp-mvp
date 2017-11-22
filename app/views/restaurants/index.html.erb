@@ -3,9 +3,9 @@
     <div class="col-xs-12">
       <h1>Our Restaurants</h1>
 
-      <ul>
+      <ul class="list-group">
         <% @restaurants.each do |restaurant| %>
-          <li>
+          <li class="list-group-item">
             <%= restaurant.name %>
             <%= link_to "Details", restaurant_path(restaurant.id) %>
           </li>
