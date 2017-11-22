@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1><%=@restaurant.name%></h1>
+      <p><%= @restaurant.address%></p>
+      <p><%= @restaurant.phone_number%></p>
+      <p><%= @restaurant.category%></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <h1>Reviews</h1>
+      <ul>
+          <% @restaurant.reviews.each do |review|%>
+          <li>
+            <p><%= review.content%></p>
+            <p><%= review.rating%></p>
+          </li>
+          <%end%>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <p><%= link_to "Add a review", new_restaurant_review_path(@restaurant), class: "btn btn-primary"%></p>
+      <p><%= link_to "< To Homepage", restaurants_path %></p>
+    </div>
+  </div>
+</div>
+
+
+
